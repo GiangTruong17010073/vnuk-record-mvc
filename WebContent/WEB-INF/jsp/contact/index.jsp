@@ -44,8 +44,8 @@
 					</td>
 					
 					<td>
-					    <a href="mvc?action=contact.Show&id=${contact.id}" class="btn btn-xs btn-default" id="show">Show</a>
-					    <a href="mvc?action=contact.Update&id=${contact.id}" class="btn btn-xs btn-success" id = "update">Update</a>
+					    <a href="mvc?action=contact.Show&id=${contact.id}" class="btn btn-xs btn-light">Show</a>
+					    <a href="mvc?action=contact.Update&id=${contact.id}&back=list" class="btn btn-xs btn-primary">Update</a>
 						<a href="mvc?action=contact.Delete&id=${contact.id}" class="btn btn-xs btn-danger">Delete</a>
 					</td>
 							

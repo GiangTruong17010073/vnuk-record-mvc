@@ -6,9 +6,13 @@ body {
 }
 
 
-a, a:visited {
-	color: #787;
+a, a:visited, a:hover {
 	text-decoration: none;
+}
+
+
+a:not(.btn), a:visited:not(.btn), a:hover:not(.btn) {
+	color: #787;
 }
 
 
@@ -16,7 +20,7 @@ a, a:visited {
 .my-tr-red { background-color: #ef2929; }
 
 .my-tr-gold, .my-tr-red { color: #111; }
-.my-tr-gold a, .my-tr-red a { color: #fff; }
+.my-tr-gold a:not(.btn), .my-tr-red a:not(.btn) { color: #fff; }
 
 td,th { padding: 10px; border: 1px solid #000; }
 th{

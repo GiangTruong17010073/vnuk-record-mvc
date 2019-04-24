@@ -3,12 +3,6 @@
 <!DOCTYPE html>
 <html>
 	<head>
-	
-		<script>
-function goBack() {
-  window.history.back()
-}
-</script>
 		<link rel="stylesheet" type="text/css" href="css/index.css">
 		<link rel="stylesheet"  type="text/css" href="css/jquery-ui.css">
 		<script type="text/javascript" src="js/jquery.js"></script>
@@ -30,13 +24,27 @@ function goBack() {
         <form action="updateContact" method="POST">
         	
         	<input type= "hidden" name="id" value="${myContact.id }"/>           
-            <vnuk:myNameField name="name" id="name" label="Name"/>
-            <vnuk:myNameField name="address" id="address" label="Address"/>
-            <vnuk:myNameField name="email" id="email" label="E-mail"/>
-            <vnuk:myDateField name="date_of_birth" id="date-of-birth" label="Date of birth"/>
+            <vnuk:myInput name="name" id="name" label="Name" value="${myContact.name}" />
+            <vnuk:myInput name="address" id="address" label="Address" value="${myContact.address}" />
+            <vnuk:myInput name="email" id="email" label="E-mail" value="${myContact.email}" />
+            <fmt:formatDate var="date" value='${contact.dateOfBirth.time}' pattern='dd/MM/yy' />
+            <vnuk:myDateField name="date_of_birth" id="date-of-birth" label="Date of birth" value="${date}" />
+            
+            <c:choose>
+            	<c:when test="${ param.back == 'list' }">
+            		<a href="mvc?action=contact.Index" class="btn btn-xs btn-light">
+            			Back to the list of contacts
+            		</a>
+            	</c:when>
+            	
+            	<c:when test="${ param.back == 'detail' }">
+            		<a href="mvc?action=contact.Show&id=${ myContact.id }" class="btn btn-xs btn-light">
+            			Back to the detail of ${ myContact.name }
+            		</a>
+            	</c:when>
+            </c:choose>
                         
             <input class="btn btn-success" type="submit" value="Update" />
-            <input class="btn btn-xs btn-success" id = "return" type="button" value="Cancel" onclick="window.history.back()">
         </form>
 
         <c:import url="footer.jsp" />

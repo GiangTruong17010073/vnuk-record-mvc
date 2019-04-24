@@ -44,7 +44,7 @@
 				
 				<td>
 					<a href="mvc?action=contact.Index" class="btn btn-xs btn-success" id = "return"> Return</a>
-					<a href="mvc?action=contact.Update&id=${myContact.id}" class="btn btn-xs btn-success" id = "update">Update</a>				
+					<a href="mvc?action=contact.Update&id=${myContact.id}&back=detail" class="btn btn-xs btn-success" id = "update">Update</a>				
 				</td>
 						
 			</tr>
