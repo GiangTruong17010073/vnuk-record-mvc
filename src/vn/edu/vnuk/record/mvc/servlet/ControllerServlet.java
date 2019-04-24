@@ -25,7 +25,6 @@ public class ControllerServlet extends HttpServlet{
 		
 		try {
 			Class myClass = Class.forName(className);
-			@SuppressWarnings("deprecation")
 			Action action = (Action)myClass.newInstance();
 			String page = action.run(request,response);
 			request.getRequestDispatcher(page).forward(request,response);	
